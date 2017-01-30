@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="calculator_start.css">
+    <title>Calcuator Starter App</title>
+    <script src="calculator_start.js"></script>
+</head>
+
+<body>
+    <h1>Calculator App</h1>
+    <form>
+        <p>
+            <input class="rightAlign" type="text" id="screen" maxlength="5">
+        </p>
+        <p class="btn-group-lg">
+            <button type="button" class="btn btn-danger btn-lg" onclick="allClear()">AC</button>
+            <button class=" btn btn-danger" type="button" onclick="clar()">C</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="getPI()">π</button>
+            <button class="btn btn-warning btn-lg" type="button" onclick="changeSign()">+/-</button>
+            <button id="power" class=" btn btn-warning" type="button" onclick="storeOperator('^')">x<sup>y</sup></button>
+            <button id="square" class="btn btn-warning" type="button" onclick="squareNum('screen')">x<sup>2</sup></button>
+        </p>
+        <p class="btn-group-lg">
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('7')">7</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('8')">8</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('9')">9</button>
+            <button id="multiply" class="btn btn-info btn-lg" type="button" onclick="storeOperator('*')">x</button>
+            <button class="btn btn-warning btn-lg" type="button" onclick="percentage()">%</button>
+        </p>
+        <p>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('4')">4</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('5')">5</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('6')">6</button>
+            <button id="subtract" class="btn btn-info btn-lg" type="button" onclick="storeOperator('-')">- </button>
+            <button class="btn btn-warning btn-lg" type="button" onclick="factorial('screen')"> X! </button>
+            <! factorial button here >
+        </p>
+        <p>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('1')">1</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('2')">2</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('3')">3</button>
+            <button id="subtract" class="btn btn-info btn-lg" type="button" onclick="storeOperator('+')">+</button>
+            <button class="btn btn-warning btn-lg" type="button" onclick="inverse('screen')">1/X</button>
+            <! inverse button here >
+        </p>
+        <p>
+            <button class="btn btn-info btn-lg" type="button" onclick="calculate()">=</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDigit('0')">0</button>
+            <button class="btn btn-primary btn-lg" type="button" onclick="addDecimal()">.</button>
+            <button id="divide" class="btn btn-info btn-lg" type="button" onclick="storeOperator('/')">/</button>
+            <button class="btn btn-warning btn-lg" type="button" onclick="squareRoot()">&radic;x</button>
+        </p>
+    </form>
+</body>
+
+</html>
