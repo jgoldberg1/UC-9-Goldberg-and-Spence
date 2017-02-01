@@ -14,12 +14,17 @@ var currentInput = "0";
 var memory = "0";
 var operator = 0;
 
-// Helper function for displaying the current input
+/**
+ * displays the current input onto calc screen
+ */
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
 
-// Adds a digit to the current input
+/**
+ * Adds digit to calc screen
+ * @param {number} num number you want to add to calc
+ */
 function addDigit(dig) {
 if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
 currentInput = dig;
@@ -29,7 +34,10 @@ currentInput = dig;
 displayCurrentInput();
 }
 
-// Adds a decimal to the current input
+/**
+ * adds decimal to the current input
+ * @param {number} current input [[what is currently displayed on calc screen]]
+ */
 function addDecimal() {
     if (currentInput.length == 0) {
         //no leading ".", use "0."
@@ -43,7 +51,12 @@ function addDecimal() {
     displayCurrentInput();
 }
 
-// Clears everything.
+/**
+ * clears everything out of screen
+ * @param {number} current input   what is currently displayed on screen
+ * @param {object} operator [[+, -, /, *]]
+ * @param {number} [number stored in calc's memory that the operator will be applied to]
+*/
 function allClear() {
     currentInput = "0";
     operator = 0;                //clear operator
@@ -51,7 +64,10 @@ function allClear() {
     displayCurrentInput();
 }
 
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+/**
+ * stores the entered operator
+ * @param {operator}op [+, -, /, *]
+ */
 function storeOperator(op) {
     if (op.indexOf("*") > -1) { operator = 1; };       //codes for *
     if (op.indexOf("/") > -1) { operator = 2; };       // slash (divide)
@@ -63,7 +79,9 @@ function storeOperator(op) {
     displayCurrentInput();
 }
 
-// Calculate using operator, the memory and what is current
+/**
+ * calculates output using memory, operator, and current input
+ */
 function calculate() {
     if (operator == 1) { currentInput = eval(memory) * eval(currentInput); };
     if (operator == 2) {
@@ -82,23 +100,30 @@ function calculate() {
     displayCurrentInput();
 }
 
-// Change the sign of the current input
+/**
+ * changes the sign from positive to negative and vice versa
+ */
 function changeSign() {
     currentInput = currentInput * (-1);
     displayCurrentInput();
 }
 
-// Clear the current input back to 0
+/**
+ * sets current input back to zero
+ */
 function clears() {
     currentInput = "0";
     displayCurrentInput();
 }
 
-// Change the current input to a percentage
+/**
+ * change curren input to percentage
+ */
 function percentage() {
  currentInput = currentInput/100;
 displayCurrentInput();
 }
+
 // Calculate the factorial of the current input
 function factorial() {
 var input = currentInput;
@@ -110,24 +135,39 @@ currentInput = x;
 console.log(currentInput);
 displayCurrentInput();
 }
-// Calculate the square of the current input
+
+/**
+ * calculate square of the current input
+ */
 function square() {
  currentInput = Math.pow(currentInput,2);
     displayCurrentInput();
 }
 
-// Calculate the square root of the current input
+/**
+ * calculate square root of current input
+ */
 function squareRoot() {
    currentInput = Math.sqrt(currentInput);
     displayCurrentInput();
 }
 
-// Calculate the inverse of the current input
+/**
+ * calculate inverse of current input
+ * @param {number?} inputId [idk what an inverse is]
+ */
 function inverse() {
 currentInput = 1/currentInput;
 displayCurrentInput();
 }
 
+
+
+
+
+
+
+/**
 //Bonus Challenge
 function cosineDegree() {
    currentInput = Math.cos(currentInput);
