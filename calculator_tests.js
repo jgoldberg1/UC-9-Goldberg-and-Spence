@@ -1,4 +1,4 @@
-/ Test for inputing digits
+// Test for inputing digits
 QUnit.test( "Add digits test", function( assert ) {
     addDigit('1');
     addDigit('2');
