@@ -12,7 +12,7 @@ QUnit.test( "Add decimal test", function( assert ) {
     addDecimal();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
-//US1: As a user, I want to be able to press a button and change the sign of the current number that I have inputted into the calculator.
+//US1: As a user, I want to be able to press a button and change the sign of the current number that I have inputted into the calculator.f
 
 
 //US2: As a user I want to be able to press a button and change the inputed number on the calculator's screen to change to a percentage.

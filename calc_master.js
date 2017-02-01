@@ -167,7 +167,7 @@ displayCurrentInput();
 
 
 
-/**
+
 //Bonus Challenge
 function cosineDegree() {
    currentInput = Math.cos(currentInput);
