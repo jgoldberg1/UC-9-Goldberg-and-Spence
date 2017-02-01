@@ -1,5 +1,6 @@
 // Test for inputing digits
 QUnit.test( "Add digits test", function( assert ) {
+    allClear();
     addDigit('1');
     addDigit('2');
     assert.equal(document.getElementById("screen").value, "12", "Passed - Expected 12");
@@ -7,16 +8,30 @@ QUnit.test( "Add digits test", function( assert ) {
 
 // Test adding one, then two decimals
 QUnit.test( "Add decimal test", function( assert ) {
+    allClear();
     addDecimal();
     addDigit('2');
     addDecimal();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
-//US1: As a user, I want to be able to press a button and change the sign of the current number that I have inputted into the calculator.f
+//US1: As a user, I want to be able to press a button and change the sign of the current number that I have inputted into the calculator.
+QUnit.test("Add sign change test", function( assert ) {
+    allClear();
+    addDigit('2');
+    changeSign();
+
+    assert.equal(document.getElementById("screen").value, "-2", "Passed - Expected -2");
+});
 
 
 //US2: As a user I want to be able to press a button and change the inputed number on the calculator's screen to change to a percentage.
+QUnit.test("Add percentage test", function( assert ) {
+    allClear();
+    addDigit('2');
+    percentage();
 
+    assert.equal(document.getElementById("screen").value, "0.02", "Passed - Expected 0.02");
+});
 
 //US3: As a user, I want to be able to calculate the inverse of a number simply by pressing a button.
 
