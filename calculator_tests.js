@@ -54,7 +54,6 @@ QUnit.test("Add factorial test", function( assert ) {
 
 
 //US5: As a user I want to be able to calculate the square root of a number by simply pressing a button.
-//US4: As a user I want to be able to calculate the factorial of a number by simply pressing a button.
 QUnit.test("Add square root test", function( assert ) {
     allClear();
     addDigit('25');
@@ -65,12 +64,55 @@ QUnit.test("Add square root test", function( assert ) {
 
 
 //US6: As a user I want to be able to calculate the square of a number by simply pressing a button.
+QUnit.test("Add square test", function( assert ) {
+    allClear();
+    addDigit('5');
+    square();
 
+    assert.equal(document.getElementById("screen").value, "25", "Passed - Expected 25");
 
+});
 //US7: As a user who sometimes makes mistakes when pressing buttons on the keypad, I want to be able to press a button that clears my current input, but not the stored procedure.
+QUnit.test("Add clear input test", function( assert ) {
+    allClear();
+    addDigit('5');
+    storeOperator('*');
+    addDigit('6');
+    clears();
 
+    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0");
+});
 
 //US8: Bug Alert! There is a bug in the calculator app! As a careless user I want to be told that I just tried to divide by zero, which I should be told is not allowed.
+QUnit.test("Add divide by zero error", function( assert ) {
+    allClear();
+    addDigit('5');
+    storeOperator('/');
+    addDigit('0');
+    calculate();
 
+    assert.equal(document.getElementById("screen").value, "DIVIDE BY ZERO ERROR", "Passed - Expected DIVIDE BY ZERO ERROR");
+});
 
 //US9: Bug Alert! As an easily confused user I don't want to be able to type numbers into the screen that causes some of the numbers to disappear off the screen, thus confusing me about what I actually typed.
+QUnit.test("Add character limit", function( assert ) {
+    allClear();
+    addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+  addDigit('9');
+
+
+
+    assert.equal(document.getElementById("screen").value, "999999999999", "Passed - Expected 999999999999");
+});
